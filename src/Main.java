@@ -1,9 +1,10 @@
-import epita.fr.java.quiz.connection.DatabaseConnection;
+import epita.fr.java.quiz.menu.Menu;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("EPITA JAVA QUIZ By VADRAMA NDISANG NGYIBI!");
-        DatabaseConnection.getConnection();
+        Menu menu = new Menu();
+        menu.mainMenu();
     }
 }
