@@ -29,11 +29,16 @@ public class TopicsDAO {
             }
             else if(!checkTopic.next()){
                 try {
-                    PreparedStatement preparedStatement = connection.prepareStatement(addTopicQuery);
+                    PreparedStatement preparedStatement = connection.prepareStatement(addTopicQuery, Statement.RETURN_GENERATED_KEYS);
                     preparedStatement.setString(1, topic);
-                    int addTopic = preparedStatement.executeUpdate();
-                    if (addTopic > 0) {
-                        System.out.println("The topic was add Successfully");
+                    preparedStatement.execute();
+                    ResultSet resultSet = preparedStatement.getGeneratedKeys();
+                    int generatedKey = 0;
+                    if (resultSet.next()) {
+                        generatedKey = resultSet.getInt(1);
+                    }
+                    if (generatedKey > 0) {
+                        System.out.println("The topic was added Successfully");
                         System.out.println("");
                         System.out.println("Do you wish to add another Topic? \n Enter Y or N");
                         String choices = scanner.next();

@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Epita_Java_Quiz@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.10">
+    <root id="1">
+      <ServerVersion>9.6.2</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="Epita_Java_Quiz">
+      <ObjectId>29183</ObjectId>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>106</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="inventoryDB">
+      <ObjectId>19972</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="notificationDB">
+      <ObjectId>28740</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="orderDB">
+      <ObjectId>19851</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="6" parent="1" name="paymentDB">
+      <ObjectId>28571</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="7" parent="1" name="postgres">
+      <ObjectId>12401</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="8" parent="1" name="userDB">
+      <ObjectId>19616</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="11" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="12" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="13" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="16" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <Owner>postgres</Owner>
+      <IntrospectionTimestamp>2020-12-30.11:36:24.853</IntrospectionTimestamp>
+      <IntrospectionStateNumber>4354</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="17" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="22" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="23" parent="16" name="admincodes_idadmincodes_seq">
+      <ObjectId>29184</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="24" parent="16" name="answers_idanswers_seq">
+      <ObjectId>29193</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="25" parent="16" name="mcqanswers_idmcqanswers_seq">
+      <ObjectId>29206</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="26" parent="16" name="questions_idquestions_seq">
+      <ObjectId>29219</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="27" parent="16" name="quiz_idquiz_seq">
+      <ObjectId>29232</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="28" parent="16" name="register_idregister_seq">
+      <ObjectId>29241</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="29" parent="16" name="results_idresults_seq">
+      <ObjectId>29250</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="30" parent="16" name="topicquiz_idquetionquiz_seq">
+      <ObjectId>29261</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="31" parent="16" name="topics_idtopics_seq">
+      <ObjectId>29272</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="32" parent="16" name="admincodes">
+      <ObjectId>29186</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="33" parent="16" name="answers">
+      <ObjectId>29195</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="34" parent="16" name="mcqanswers">
+      <ObjectId>29208</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="35" parent="16" name="questions">
+      <ObjectId>29221</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="36" parent="16" name="quiz">
+      <ObjectId>29234</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="37" parent="16" name="register">
+      <ObjectId>29243</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="38" parent="16" name="results">
+      <ObjectId>29252</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="39" parent="16" name="topicquiz">
+      <ObjectId>29263</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4332</StateNumber>
+    </table>
+    <table id="40" parent="16" name="topics">
+      <ObjectId>29274</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>4354</StateNumber>
+    </table>
+    <column id="41" parent="32" name="idadmincodes">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;admincodes_idadmincodes_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>admincodes_idadmincodes_seq</SequenceName>
+    </column>
+    <column id="42" parent="32" name="code">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="43" parent="32" name="admincodes_pk">
+      <ObjectId>29192</ObjectId>
+      <ColNames>idadmincodes</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="32" name="pk_admincodes">
+      <ObjectId>29190</ObjectId>
+      <ColNames>idadmincodes</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="32" name="pk_admincodes">
+      <ObjectId>29191</ObjectId>
+      <ColNames>idadmincodes</ColNames>
+      <UnderlyingIndexName>pk_admincodes</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="33" name="idanswers">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;answers_idanswers_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>answers_idanswers_seq</SequenceName>
+    </column>
+    <column id="47" parent="33" name="idquestions">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="48" parent="33" name="answer">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="49" parent="33" name="answers_pk">
+      <ObjectId>29204</ObjectId>
+      <ColNames>idanswers</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="50" parent="33" name="pk_answers">
+      <ObjectId>29202</ObjectId>
+      <ColNames>idanswers</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="51" parent="33" name="association7_fk">
+      <ObjectId>29205</ObjectId>
+      <ColNames>idquestions</ColNames>
+    </index>
+    <key id="52" parent="33" name="pk_answers">
+      <ObjectId>29203</ObjectId>
+      <ColNames>idanswers</ColNames>
+      <UnderlyingIndexName>pk_answers</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="33" name="fk_answers_associati_question">
+      <ObjectId>29281</ObjectId>
+      <ColNames>idquestions</ColNames>
+      <RefTableId>29221</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>questions</RefTableName>
+      <RefKeyName>pk_questions</RefKeyName>
+      <RefColNames>idquestions</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="54" parent="34" name="idmcqanswers">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;mcqanswers_idmcqanswers_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>mcqanswers_idmcqanswers_seq</SequenceName>
+    </column>
+    <column id="55" parent="34" name="idquestions">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="56" parent="34" name="a">
+      <Position>3</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="57" parent="34" name="b">
+      <Position>4</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="58" parent="34" name="c">
+      <Position>5</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="34" name="d">
+      <Position>6</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="34" name="solution">
+      <Position>7</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="61" parent="34" name="mcqanswers_pk">
+      <ObjectId>29217</ObjectId>
+      <ColNames>idmcqanswers</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="62" parent="34" name="pk_mcqanswers">
+      <ObjectId>29215</ObjectId>
+      <ColNames>idmcqanswers</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="63" parent="34" name="association6_fk">
+      <ObjectId>29218</ObjectId>
+      <ColNames>idquestions</ColNames>
+    </index>
+    <key id="64" parent="34" name="pk_mcqanswers">
+      <ObjectId>29216</ObjectId>
+      <ColNames>idmcqanswers</ColNames>
+      <UnderlyingIndexName>pk_mcqanswers</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="34" name="fk_mcqanswe_associati_question">
+      <ObjectId>29286</ObjectId>
+      <ColNames>idquestions</ColNames>
+      <RefTableId>29221</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>questions</RefTableName>
+      <RefKeyName>pk_questions</RefKeyName>
+      <RefColNames>idquestions</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="66" parent="35" name="idquestions">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;questions_idquestions_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>questions_idquestions_seq</SequenceName>
+    </column>
+    <column id="67" parent="35" name="idtopics">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="68" parent="35" name="difficulty">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="69" parent="35" name="question">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="70" parent="35" name="questiontype">
+      <Position>5</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="71" parent="35" name="pk_questions">
+      <ObjectId>29228</ObjectId>
+      <ColNames>idquestions</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="72" parent="35" name="questions_pk">
+      <ObjectId>29230</ObjectId>
+      <ColNames>idquestions</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="73" parent="35" name="association5_fk">
+      <ObjectId>29231</ObjectId>
+      <ColNames>idtopics</ColNames>
+    </index>
+    <key id="74" parent="35" name="pk_questions">
+      <ObjectId>29229</ObjectId>
+      <ColNames>idquestions</ColNames>
+      <UnderlyingIndexName>pk_questions</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="35" name="fk_question_associati_topics">
+      <ObjectId>29291</ObjectId>
+      <ColNames>idtopics</ColNames>
+      <RefTableId>29274</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>topics</RefTableName>
+      <RefKeyName>pk_topics</RefKeyName>
+      <RefColNames>idtopics</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="76" parent="36" name="idquiz">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;quiz_idquiz_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>quiz_idquiz_seq</SequenceName>
+    </column>
+    <column id="77" parent="36" name="quizcode">
+      <Position>2</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="78" parent="36" name="pk_quiz">
+      <ObjectId>29238</ObjectId>
+      <ColNames>idquiz</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="79" parent="36" name="quiz_pk">
+      <ObjectId>29240</ObjectId>
+      <ColNames>idquiz</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="36" name="pk_quiz">
+      <ObjectId>29239</ObjectId>
+      <ColNames>idquiz</ColNames>
+      <UnderlyingIndexName>pk_quiz</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="81" parent="37" name="idregister">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;register_idregister_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>register_idregister_seq</SequenceName>
+    </column>
+    <column id="82" parent="37" name="studentmatricule">
+      <Position>2</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="83" parent="37" name="pk_register">
+      <ObjectId>29247</ObjectId>
+      <ColNames>idregister</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="84" parent="37" name="register_pk">
+      <ObjectId>29249</ObjectId>
+      <ColNames>idregister</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="85" parent="37" name="pk_register">
+      <ObjectId>29248</ObjectId>
+      <ColNames>idregister</ColNames>
+      <UnderlyingIndexName>pk_register</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="86" parent="38" name="idresults">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;results_idresults_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>results_idresults_seq</SequenceName>
+    </column>
+    <column id="87" parent="38" name="idregister">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="88" parent="38" name="idquiz">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="89" parent="38" name="quizscore">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="90" parent="38" name="pk_results">
+      <ObjectId>29256</ObjectId>
+      <ColNames>idresults</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="91" parent="38" name="results_pk">
+      <ObjectId>29258</ObjectId>
+      <ColNames>idresults</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="92" parent="38" name="association3_fk">
+      <ObjectId>29259</ObjectId>
+      <ColNames>idregister</ColNames>
+    </index>
+    <index id="93" parent="38" name="association4_fk">
+      <ObjectId>29260</ObjectId>
+      <ColNames>idquiz</ColNames>
+    </index>
+    <key id="94" parent="38" name="pk_results">
+      <ObjectId>29257</ObjectId>
+      <ColNames>idresults</ColNames>
+      <UnderlyingIndexName>pk_results</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="95" parent="38" name="fk_results_associati_register">
+      <ObjectId>29296</ObjectId>
+      <ColNames>idregister</ColNames>
+      <RefTableId>29243</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>register</RefTableName>
+      <RefKeyName>pk_register</RefKeyName>
+      <RefColNames>idregister</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="96" parent="38" name="fk_results_associati_quiz">
+      <ObjectId>29301</ObjectId>
+      <ColNames>idquiz</ColNames>
+      <RefTableId>29234</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>quiz</RefTableName>
+      <RefKeyName>pk_quiz</RefKeyName>
+      <RefColNames>idquiz</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="97" parent="39" name="idquetionquiz">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;topicquiz_idquetionquiz_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>topicquiz_idquetionquiz_seq</SequenceName>
+    </column>
+    <column id="98" parent="39" name="idquiz">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="99" parent="39" name="idtopics">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="100" parent="39" name="questiondifficulty">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="101" parent="39" name="pk_topicquiz">
+      <ObjectId>29267</ObjectId>
+      <ColNames>idquetionquiz</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="102" parent="39" name="topicquiz_pk">
+      <ObjectId>29269</ObjectId>
+      <ColNames>idquetionquiz</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="103" parent="39" name="association1_fk">
+      <ObjectId>29270</ObjectId>
+      <ColNames>idquiz</ColNames>
+    </index>
+    <index id="104" parent="39" name="association2_fk">
+      <ObjectId>29271</ObjectId>
+      <ColNames>idtopics</ColNames>
+    </index>
+    <key id="105" parent="39" name="pk_topicquiz">
+      <ObjectId>29268</ObjectId>
+      <ColNames>idquetionquiz</ColNames>
+      <UnderlyingIndexName>pk_topicquiz</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="106" parent="39" name="fk_topicqui_associati_quiz">
+      <ObjectId>29306</ObjectId>
+      <ColNames>idquiz</ColNames>
+      <RefTableId>29234</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>quiz</RefTableName>
+      <RefKeyName>pk_quiz</RefKeyName>
+      <RefColNames>idquiz</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="107" parent="39" name="fk_topicqui_associati_topics">
+      <ObjectId>29311</ObjectId>
+      <ColNames>idtopics</ColNames>
+      <RefTableId>29274</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>topics</RefTableName>
+      <RefKeyName>pk_topics</RefKeyName>
+      <RefColNames>idtopics</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="108" parent="40" name="idtopics">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4332</StateNumber>
+      <DefaultExpression>nextval(&apos;topics_idtopics_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>topics_idtopics_seq</SequenceName>
+    </column>
+    <column id="109" parent="40" name="topic">
+      <Position>2</Position>
+      <DataType>varchar(254)|0s</DataType>
+      <StateNumber>4332</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="110" parent="40" name="status">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4354</StateNumber>
+      <DefaultExpression>1</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="111" parent="40" name="pk_topics">
+      <ObjectId>29278</ObjectId>
+      <ColNames>idtopics</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="112" parent="40" name="topics_pk">
+      <ObjectId>29280</ObjectId>
+      <ColNames>idtopics</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="113" parent="40" name="pk_topics">
+      <ObjectId>29279</ObjectId>
+      <ColNames>idtopics</ColNames>
+      <UnderlyingIndexName>pk_topics</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

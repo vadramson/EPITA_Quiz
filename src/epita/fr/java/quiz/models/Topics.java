@@ -4,10 +4,10 @@ public class Topics {
     private int idTopics;
     private String topic;
 
-    public Topics(int idTopics, String topic) {
-        this.idTopics = idTopics;
-        this.topic = topic;
-    }
+//    public Topics(int idTopics, String topic) {
+//        this.idTopics = idTopics;
+//        this.topic = topic;
+//    }
 
     public int getIdTopics() {
         return idTopics;

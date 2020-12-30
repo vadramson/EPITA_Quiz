@@ -1,6 +1,7 @@
 package epita.fr.java.quiz.menu;
 
 import epita.fr.java.quiz.DAOs.AdminCodesDAO;
+import epita.fr.java.quiz.DAOs.QuestionsDAO;
 import epita.fr.java.quiz.DAOs.RegisterDAO;
 import epita.fr.java.quiz.DAOs.TopicsDAO;
 
@@ -32,9 +33,32 @@ public class Menu {
             adminCodesDAO.checkIfAdmin();
             if(Globals.isAdmin){
 
-            };
-            TopicsDAO topicsDAO = new TopicsDAO();
-            topicsDAO.addTopics();
+                System.out.println("What will you like to do?");
+                System.out.println("Q) To Manage Questions    OR    TP) To Manage Topics OR  QZ) To Manage Quiz");
+                System.out.println("Enter Q or T or QZ ");
+                String adminChoices = scanner.next();
+                String adminChoice = lowercase(adminChoices);
+
+                if (adminChoice.equals("e")){
+                    exit();
+                }
+                if (adminChoice.equals("q")){
+                    QuestionsDAO questionsDAO = new QuestionsDAO();
+                    questionsDAO.addQuestions();
+                }
+                if (adminChoice.equals("tp")){
+                    TopicsDAO topicsDAO = new TopicsDAO();
+                    topicsDAO.addTopics();
+                }
+                if (adminChoice.equals("qz")){
+                    exit();
+                }
+                exitInvalidEntry();
+
+
+
+            }
+
         }
         if (choice.equals("s")){
             RegisterDAO registerDAO = new RegisterDAO();
