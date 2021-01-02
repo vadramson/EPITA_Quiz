@@ -109,19 +109,8 @@ public class QuestionsDAO {
                             scanner.nextLine();
                             String question = scanner.nextLine();
                             try {
-                                String saveMCQ_Question = "INSERT INTO  questions (idtopics, difficulty, question, questiontype) values (?,?,?,?)";
-                                PreparedStatement preparedStatement = connection.prepareStatement(saveMCQ_Question, Statement.RETURN_GENERATED_KEYS);
-                                preparedStatement.setInt(1, idTopic);
-                                preparedStatement.setInt(2, difficulty);
-                                preparedStatement.setString(3, question);
-                                preparedStatement.setString(4, "MCQ");
-                                preparedStatement.execute();
-                                ResultSet resultSet = preparedStatement.getGeneratedKeys();
-                                int generatedKey = 0;
-                                if (resultSet.next()) {
-                                    generatedKey = resultSet.getInt(1);
-                                }
-                                if (generatedKey > 0) {
+
+
                                     System.out.println("");
                                     System.out.println("");
 
@@ -137,36 +126,74 @@ public class QuestionsDAO {
                                     System.out.println("Enter the fourth possible answer");
                                     String fourthAnswer = scanner.nextLine();
 
-                                    int countAnswer = 0;
+                                    boolean allSystemGo = false;
                                     String solution = "";
-                                    boolean save = false;
-                                    solution = chooseRightAnswer(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
 
-                                    if(!solution.equals("a") && !solution.equals("b") && !solution.equals("c") && !solution.equals("d")){
+                                    solution = chooseRightAnswer(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+                                    boolean save = rightAnswer(solution);
+                                    if (save) {
+                                        allSystemGo = true;
+                                    } else {
                                         System.out.println("Wrong Choice. You will have one more chance to enter the right answer ");
-                                        countAnswer +=1;
-                                        if(countAnswer > 1){
+                                        solution = chooseRightAnswer(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+                                        save = rightAnswer(solution);
+                                        if (save) {
+                                            allSystemGo = true;
+                                        } else {
+                                            System.out.println("Two Wrong Choices,\n program will exit now!");
+                                            System.out.println("");
                                             menu.exit();
                                         }
-                                    }else{
-//                                        save
-                                    }
-                                    if(countAnswer == 1){
-                                        solution = chooseRightAnswer(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
                                     }
 
-                                    System.out.println("The Question was added Successfully");
-                                    System.out.println("Do you wish to add another Question? \n Enter Y or N");
-                                    String choices = scanner.next();
-                                    String choice = toLowerCase(choices);
+                                    if(allSystemGo){
+                                        String saveMCQ_Question = "INSERT INTO  questions (idtopics, difficulty, question, questiontype) values (?,?,?,?)";
+                                        PreparedStatement preparedStatement = connection.prepareStatement(saveMCQ_Question, Statement.RETURN_GENERATED_KEYS);
+                                        preparedStatement.setInt(1, idTopic);
+                                        preparedStatement.setInt(2, difficulty);
+                                        preparedStatement.setString(3, question);
+                                        preparedStatement.setString(4, "MCQ");
+                                        preparedStatement.execute();
+                                        ResultSet resultSet = preparedStatement.getGeneratedKeys();
+                                        int generatedKeyMCQ_Question = 0;
+                                        if (resultSet.next()) {
+                                            generatedKeyMCQ_Question = resultSet.getInt(1);
+                                        }
+                                        if (generatedKeyMCQ_Question > 0) {
+                                            String saveMCQ_Answers = "INSERT INTO  mcqanswers (idquestions, a, b, c, d, solution) values (?,?,?,?,?,?)";
+                                            PreparedStatement preparedStatementMCQ_Answers = connection.prepareStatement(saveMCQ_Answers, Statement.RETURN_GENERATED_KEYS);
+                                            preparedStatementMCQ_Answers.setInt(1, generatedKeyMCQ_Question);
+                                            preparedStatementMCQ_Answers.setString(2, firstAnswer);
+                                            preparedStatementMCQ_Answers.setString(3, secondAnswer);
+                                            preparedStatementMCQ_Answers.setString(4, thirdAnswer);
+                                            preparedStatementMCQ_Answers.setString(5, fourthAnswer);
+                                            preparedStatementMCQ_Answers.setString(6, solution);
+                                            preparedStatementMCQ_Answers.execute();
+                                            ResultSet resultSetMCQ_Answers = preparedStatementMCQ_Answers.getGeneratedKeys();
+                                            int generatedID_MCQ_Answers = 0;
+                                            if (resultSetMCQ_Answers.next()) {
+                                                generatedID_MCQ_Answers = resultSetMCQ_Answers.getInt(1);
+                                            }
+                                            if (generatedID_MCQ_Answers > 0) {
 
-                                    if (choice.equals("y")){
-                                        addMCQQuestions();
-                                    }else if (choice.equals("n") | !choice.equals("y")){
-                                        Menu menu = new Menu();
-                                        menu.mainMenu();
+                                                System.out.println("The Question was added Successfully");
+                                                System.out.println("Do you wish to add another Question? \n Enter Y or N");
+                                                String choices = scanner.next();
+                                                String choice = toLowerCase(choices);
+
+                                                if (choice.equals("y")){
+                                                    addMCQQuestions();
+                                                }else if (choice.equals("n") | !choice.equals("y")){
+                                                    Menu menu = new Menu();
+                                                    menu.mainMenu();
+                                                }
+                                            }
+                                        }
                                     }
-                                }
+
+
+
+
                                 connection.close();
                                 break;
                             } catch (SQLException e) {
@@ -199,7 +226,7 @@ public class QuestionsDAO {
         }
     }
 
-    public String chooseRightAnswer(String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer){
+    private String chooseRightAnswer(String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer){
         System.out.println("");
         System.out.println("Which is the correct answer? ");
         System.out.println("");
@@ -213,6 +240,20 @@ public class QuestionsDAO {
         System.out.println("D for - " + fourthAnswer);
         String solutions = scanner.next();
         return menu.lowercase(solutions);
+    }
+
+    private boolean rightAnswer(String solution){
+        int countAnswer = 0;
+        boolean save = false;
+
+        if(!solution.equals("a") && !solution.equals("b") && !solution.equals("c") && !solution.equals("d")){
+//            System.out.println("Wrong Choice. You will have one more chance to enter the right answer ");
+            countAnswer +=1;
+            return false;
+        }else{
+            return true;
+        }
+
     }
 
 
