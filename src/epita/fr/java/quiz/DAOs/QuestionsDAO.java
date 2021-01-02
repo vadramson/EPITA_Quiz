@@ -28,21 +28,16 @@ public class QuestionsDAO {
         String questionTypes = scanner.next();
         String questionType = menu.lowercase(questionTypes);
 
-        if(questionType.equals("m") | questionType.equals("e")){
-            if(questionType.equals("m")){
-                menu.mainMenu();
-            }
-            else{
+        if(questionType.equals("m")){
+            menu.mainMenu();
+        }
+        if(questionType.equals("e")){
                 menu.exit();
-            }
         }
-        if(questionType.equals("mcq")){
-            addMCQQuestions();
+        if(questionType.equals("mcq") || questionType.equals("o")){
+            addMCQQuestions(questionType);
         }
 
-        if(questionType.equals("o")){
-
-        }
     }
 
     public List<Topics> displayTopics() {
@@ -84,7 +79,7 @@ public class QuestionsDAO {
         return topicID;
     }
 
-    public void addMCQQuestions() {
+    public void addMCQQuestions(String questionType) {
         System.out.println("Choose Question topic by entering: ");
         displayTopics();
         int counts = 0;
@@ -105,29 +100,30 @@ public class QuestionsDAO {
                                 difficulty = 3;
                                 System.out.println("Difficulty 3 chosen by default due to faulty answer");
                             }
-                            System.out.println("Enter the Question: ");
+                            System.out.println("Enter a Question: ");
                             scanner.nextLine();
                             String question = scanner.nextLine();
                             try {
+                                boolean allSystemGo = false;
+                                String firstAnswer = "", secondAnswer = "", thirdAnswer = "", fourthAnswer = "", answer = "";
+                                String solution = "";
 
+                                if(questionType.equals("mcq")){
 
                                     System.out.println("");
                                     System.out.println("");
 
                                     System.out.println("Enter the first possible answer");
-                                    String firstAnswer = scanner.nextLine();
+                                    firstAnswer = scanner.nextLine();
 
                                     System.out.println("Enter the second possible answer");
-                                    String secondAnswer = scanner.nextLine();
+                                    secondAnswer = scanner.nextLine();
 
                                     System.out.println("Enter the third possible answer");
-                                    String thirdAnswer = scanner.nextLine();
+                                    thirdAnswer = scanner.nextLine();
 
                                     System.out.println("Enter the fourth possible answer");
-                                    String fourthAnswer = scanner.nextLine();
-
-                                    boolean allSystemGo = false;
-                                    String solution = "";
+                                    fourthAnswer = scanner.nextLine();
 
                                     solution = chooseRightAnswer(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
                                     boolean save = rightAnswer(solution);
@@ -145,6 +141,12 @@ public class QuestionsDAO {
                                             menu.exit();
                                         }
                                     }
+                                }else if(questionType.equals("o") ){
+                                    System.out.println("Enter an Answer for Question: ");
+                                    String questionAnswer = scanner.next();
+                                    answer = menu.lowercase(questionAnswer);
+                                    allSystemGo = true;
+                                }
 
                                     if(allSystemGo){
                                         String saveMCQ_Question = "INSERT INTO  questions (idtopics, difficulty, question, questiontype) values (?,?,?,?)";
@@ -152,14 +154,14 @@ public class QuestionsDAO {
                                         preparedStatement.setInt(1, idTopic);
                                         preparedStatement.setInt(2, difficulty);
                                         preparedStatement.setString(3, question);
-                                        preparedStatement.setString(4, "MCQ");
+                                        preparedStatement.setString(4, questionType);
                                         preparedStatement.execute();
                                         ResultSet resultSet = preparedStatement.getGeneratedKeys();
                                         int generatedKeyMCQ_Question = 0;
                                         if (resultSet.next()) {
                                             generatedKeyMCQ_Question = resultSet.getInt(1);
                                         }
-                                        if (generatedKeyMCQ_Question > 0) {
+                                        if (generatedKeyMCQ_Question > 0 && questionType.equals("mcq")) {
                                             String saveMCQ_Answers = "INSERT INTO  mcqanswers (idquestions, a, b, c, d, solution) values (?,?,?,?,?,?)";
                                             PreparedStatement preparedStatementMCQ_Answers = connection.prepareStatement(saveMCQ_Answers, Statement.RETURN_GENERATED_KEYS);
                                             preparedStatementMCQ_Answers.setInt(1, generatedKeyMCQ_Question);
@@ -182,8 +184,34 @@ public class QuestionsDAO {
                                                 String choice = toLowerCase(choices);
 
                                                 if (choice.equals("y")){
-                                                    addMCQQuestions();
+                                                    addMCQQuestions(questionType);
                                                 }else if (choice.equals("n") | !choice.equals("y")){
+                                                    Menu menu = new Menu();
+                                                    menu.mainMenu();
+                                                }
+                                            }
+                                        }
+                                        if (generatedKeyMCQ_Question > 0 && questionType.equals("o")) {
+                                            String saveMCQ_Answers = "INSERT INTO  answers (idquestions, answer) values (?,?)";
+                                            PreparedStatement preparedStatementOrdinary_Answers = connection.prepareStatement(saveMCQ_Answers, Statement.RETURN_GENERATED_KEYS);
+                                            preparedStatementOrdinary_Answers.setInt(1, generatedKeyMCQ_Question);
+                                            preparedStatementOrdinary_Answers.setString(2, answer);
+                                            preparedStatementOrdinary_Answers.execute();
+                                            ResultSet resultSetOrdinary_Answers = preparedStatementOrdinary_Answers.getGeneratedKeys();
+                                            int generatedID_Ordinary_Answers = 0;
+                                            if (resultSetOrdinary_Answers.next()) {
+                                                generatedID_Ordinary_Answers = resultSetOrdinary_Answers.getInt(1);
+                                            }
+                                            if (generatedID_Ordinary_Answers > 0) {
+
+                                                System.out.println("Question was added Successfully");
+                                                System.out.println("Do you wish to add another Question? \n Enter Y or N");
+                                                String ansChoices = scanner.next();
+                                                String ansChoice = toLowerCase(ansChoices);
+
+                                                if( ansChoice.equals("y") ){
+                                                    addMCQQuestions(questionType);
+                                                }else if (ansChoice.equals("n") || !ansChoice.equals("y")){
                                                     Menu menu = new Menu();
                                                     menu.mainMenu();
                                                 }
