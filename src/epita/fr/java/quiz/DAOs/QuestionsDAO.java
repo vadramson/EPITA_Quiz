@@ -88,7 +88,23 @@ public class QuestionsDAO {
         return topicID;
     }
 
-    public void getAndUpdateTopic(Integer topicId){
+    private boolean checkQuestion(Integer questionId){
+        boolean questionID = false;
+        try {
+            String getQuestionId = "SELECT * FROM questions WHERE idquestions = ?";
+            PreparedStatement checkQuestionStatement = connection.prepareStatement(getQuestionId);
+            checkQuestionStatement.setInt(1, questionId);
+            ResultSet checkId = checkQuestionStatement.executeQuery();
+            if (checkId.next()) {
+                questionID = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return questionID;
+    }
+
+    void getAndUpdateTopic(Integer topicId){
         int status = -1;
         String topicValue = "", topicVal= "";
         try {
@@ -146,20 +162,6 @@ public class QuestionsDAO {
                     if (updateTopic > 0) {
                         System.out.println("Topic updated successfully!");
                         System.out.println("");
-                        System.out.println("");
-                        ResultSet updateResultSet = updateTopicStatement.getResultSet();
-                        while (topic.next()) {
-                            status = updateResultSet.getInt(3);
-                            topicVal = updateResultSet.getString(2);
-                        }
-                        String stats = "";
-                        if(status == 1){
-                            stats = "Active";
-                        }
-                        else{
-                            stats = "Deactivated";
-                        }
-                        System.out.println("Topic : " + topicVal + "\nStatus : " + stats);
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -177,7 +179,7 @@ public class QuestionsDAO {
         }
     }
 
-    public void addMCQQuestions(String questionType) {
+    private void addMCQQuestions(String questionType) {
         System.out.println("Choose Question topic by entering: ");
         displayTopics();
         int counts = 0;
@@ -374,25 +376,105 @@ public class QuestionsDAO {
     }
 
 
-    public void viewAllQuestions(){
+    public void viewAllQuestions(Integer displayID){
         try {
             String getAllQuestionsQuery = "SELECT  questions.*, topics.idtopics, topics.topic FROM questions, topics WHERE questions.idtopics = topics.idtopics AND topics.status = 1";
             Statement statement = connection.createStatement();
             ResultSet results = statement.executeQuery(getAllQuestionsQuery);
             int number = 1;
-            while (results.next()) {
+            if(results.next() && displayID == 1) {
+                System.out.println("Enter: ");
+            }
+            do{
                 String question = results.getString(4);
+                int questionID = results.getInt(1);
                 String qType = results.getString(5);
                 int questionDifficulty = results.getInt(3);
                 String topic = results.getString(7);
-                System.out.println(number + "). Topic: " + topic + " | Q: " + question +" | Qtype: " + qType + "| Difficulty: " + questionDifficulty);
+                if(displayID == 1) {
+                    System.out.println("(" + questionID + "). Topic: " + topic + " | Q: " + question + " | Qtype: " + qType + "| Difficulty: " + questionDifficulty);
+                }else {
+                    System.out.println(number + "). Topic: " + topic + " | Q: " + question + " | Qtype: " + qType + "| Difficulty: " + questionDifficulty);
+                }
                 number += 1;
-            }
+            }while (results.next());
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+
+    private void getAndUpdateQuestion(Integer questionId){
+        int difficulty=0, newDifficulty=0;
+        String questionValue = "", questionVal= "", newQuestion="";
+        try {
+            String getTopicId = "SELECT * FROM questions WHERE idquestions = ?";
+            PreparedStatement checkQuestionStatement = connection.prepareStatement(getTopicId);
+            checkQuestionStatement.setInt(1, questionId);
+            ResultSet topic = checkQuestionStatement.executeQuery();
+            while (topic.next()) {
+                difficulty = topic.getInt(3);
+                questionValue = topic.getString(4);
+            }
+
+            System.out.println("Question : " + questionValue + "\nDifficulty : " + difficulty);
+
+            System.out.println("Enter : \n-1 To Edit only the Question");
+            System.out.println("-2 To Edit only the Difficulty");
+
+            System.out.println("");
+            System.out.println("Please Enter either 1 or 2 ONLY! ");
+            String updateQuestionQuery = "", newTopic = "";
+
+            try {
+                int updateQuestionChoice = scanner.nextInt();
+                if(updateQuestionChoice==1){
+                    updateQuestionQuery = "UPDATE questions SET question =? WHERE idquestions = ? ";
+                    System.out.println("Enter a new Question ");
+                    scanner.nextLine();
+                    newQuestion = scanner.nextLine();
+                }else if(updateQuestionChoice==2){
+                    updateQuestionQuery = "UPDATE questions SET difficulty =? WHERE idquestions = ? ";
+                    System.out.println("Enter a new Difficulty Between 1 and 3 ");
+                    try {
+                        newDifficulty = scanner.nextInt();
+                    }catch (InputMismatchException e) {
+                        System.out.println("Returning to Main Menu...");
+                        menu.mainMenu();
+                    }
+                }
+
+//                Query to update starts
+
+                try {
+                    PreparedStatement updateQuestionStatement = connection.prepareStatement(updateQuestionQuery, Statement.RETURN_GENERATED_KEYS);
+                    updateQuestionStatement.setInt(2, questionId);
+                    if(updateQuestionChoice==1){
+                        updateQuestionStatement.setString(1, newQuestion);
+                    }else if(updateQuestionChoice==2){
+                        updateQuestionStatement.setInt(1, newDifficulty);
+                    }
+                    int updateQuestion = updateQuestionStatement.executeUpdate();
+                    if (updateQuestion > 0) {
+                        System.out.println("Question updated successfully!");
+                        System.out.println("");
+                        System.out.println("");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+//                Query to update ends
+
+            } catch (InputMismatchException e) {
+                menu.exitInvalidEntry();
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void searchQuestions(){
@@ -435,6 +517,34 @@ public class QuestionsDAO {
 
 
     public void updateQuestion(){
+        System.out.println("Select the Question you want to edit");
+        System.out.println("");
+        System.out.println("");
+        viewAllQuestions(1);
+
+        int counts = 0;
+        while (true) {
+            try {
+                int idQuestion = scanner.nextInt();
+                if(checkQuestion(idQuestion)){
+                    getAndUpdateQuestion(idQuestion);
+                    break;
+                }else{
+                    System.out.println("Question does not Exists!");
+                    Menu menu = new Menu();
+                    menu.mainMenu();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter only numbers");
+                scanner.next();
+                counts +=1;
+                if (counts == 4) {
+                    Menu menu = new Menu();
+                    System.out.println("Returning to Main Menu...");
+                    menu.mainMenu();
+                }
+            }
+        }
 
     }
 

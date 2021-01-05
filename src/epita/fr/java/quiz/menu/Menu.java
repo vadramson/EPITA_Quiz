@@ -44,7 +44,7 @@ public class Menu {
                 }
                 if (adminChoice.equals("q")){
                     QuestionsDAO questionsDAO = new QuestionsDAO();
-                    System.out.println("Enter A) to Add Question or V) to View all Questions or S) to search a for a Question based on topic ");
+                    System.out.println("Enter A) to Add Question or V) or Uq) to Update a Question to View all Questions or S) to search a for a Question based on topic ");
                     String adminOptions = scanner.next();
                     String adminOption = lowercase(adminOptions);
 
@@ -59,8 +59,12 @@ public class Menu {
                         questionsDAO.addQuestions();
                     }
 
+                    if(adminOption.equals("uq")){
+                        questionsDAO.updateQuestion();
+                    }
+
                     if(adminOption.equals("v")){
-                        questionsDAO.viewAllQuestions();
+                        questionsDAO.viewAllQuestions(0);
                         mainMenu();
                     }
 
