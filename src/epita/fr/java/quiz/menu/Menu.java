@@ -35,7 +35,7 @@ public class Menu {
 
                 System.out.println("What will you like to do?");
                 System.out.println("Q) To Manage Questions    OR    TP) To Manage Topics OR  QZ) To Manage Quiz");
-                System.out.println("Enter Q or T or QZ ");
+                System.out.println("Enter Q or TP or QZ ");
                 String adminChoices = scanner.next();
                 String adminChoice = lowercase(adminChoices);
 
@@ -44,18 +44,72 @@ public class Menu {
                 }
                 if (adminChoice.equals("q")){
                     QuestionsDAO questionsDAO = new QuestionsDAO();
-                    questionsDAO.addQuestions();
+                    System.out.println("Enter A) to Add Question or V) to View all Questions or S) to search a for a Question based on topic ");
+                    String adminOptions = scanner.next();
+                    String adminOption = lowercase(adminOptions);
+
+                    if(adminOption.equals("m")){
+                        mainMenu();
+                    }
+                    if(adminOption.equals("e")){
+                        exit();
+                    }
+
+                    if(adminOption.equals("a")){
+                        questionsDAO.addQuestions();
+                    }
+
+                    if(adminOption.equals("v")){
+                        questionsDAO.viewAllQuestions();
+                        mainMenu();
+                    }
+
+                    if(adminOption.equals("s")){
+                        questionsDAO.searchQuestions();
+                        mainMenu();
+                    }
+
+                    exitInvalidEntry();
                 }
                 if (adminChoice.equals("tp")){
                     TopicsDAO topicsDAO = new TopicsDAO();
-                    topicsDAO.addTopics();
+                    System.out.println("Enter A) to Add a Topic or V) to View all Topics or Up) to Update a Topic or S) to search for a Topic ");
+                    String adminOptions = scanner.next();
+                    String adminOption = lowercase(adminOptions);
+
+                    if(adminOption.equals("m")){
+                        mainMenu();
+                    }
+                    if(adminOption.equals("e")){
+                        exit();
+                    }
+
+                    if(adminOption.equals("a")){
+                        topicsDAO.addTopics();
+                    }
+
+                    if(adminOption.equals("v")){
+                        topicsDAO.displayTopics();
+                        mainMenu();
+                    }
+
+                    if(adminOption.equals("s")){
+                        topicsDAO.searchTopics();
+                        mainMenu();
+                    }
+
+                    if(adminOption.equals("up")){
+                        topicsDAO.updateTopic();
+                        mainMenu();
+                    }
+
+                    exitInvalidEntry();
                 }
+
                 if (adminChoice.equals("qz")){
                     exit();
                 }
                 exitInvalidEntry();
-
-
 
             }
 
@@ -72,6 +126,8 @@ public class Menu {
     }
 
     public void exit(){
+        System.out.println("");
+        System.out.println("");
         System.out.println("Thanks For using Me :) :::: Exiting...");
         System.exit(1);
     }
@@ -81,6 +137,8 @@ public class Menu {
     }
 
     public void exitInvalidEntry(){
+        System.out.println("");
+        System.out.println("");
         System.out.println("Invalid Entry");
         System.exit(1);
     }

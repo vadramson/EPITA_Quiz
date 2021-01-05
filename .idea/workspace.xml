@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f98480c-74cd-4474-88fe-58d20d89fa35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/QuestionsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/QuestionsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Menu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,10 +32,11 @@
     <session id="1505222761">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.82" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,16 +55,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4837" />
-          <entry key="sql" value="1" />
+          <entry key="java" value="6401" />
+          <entry key="sql" value="36" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4837" />
+          <entry key="JAVA" value="6401" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Scratch" value="1" />
+          <entry key="Scratch" value="36" />
         </counts>
       </usages-collector>
     </session>
@@ -82,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+            <state relative-caret-position="63">
+              <caret line="101" column="48" selection-start-line="101" selection-start-column="48" selection-end-line="101" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,10 +98,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/QuestionsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
+            <state relative-caret-position="505">
+              <caret line="161" column="60" selection-start-line="161" selection-start-column="60" selection-end-line="161" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#chooseRightAnswer#0;class#QuestionsDAO#0" />
+                <element signature="method#rightAnswer#0;class#QuestionsDAO#0" />
+                <element signature="method#searchQuestions#0;class#QuestionsDAO#0" />
               </folding>
             </state>
           </provider>
@@ -106,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c3d69308-8723-4945-9b93-1fd3a72fce68/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="34">
+              <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -115,7 +122,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/AdminCodesDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="394">
               <caret line="33" column="21" selection-start-line="26" selection-start-column="19" selection-end-line="33" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -127,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="-57">
               <caret line="31" column="9" selection-start-line="21" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -184,8 +191,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+            <state relative-caret-position="23">
+              <caret line="73" column="83" selection-start-line="73" selection-start-column="83" selection-end-line="73" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,12 +228,12 @@
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/AdminCodesDAO.java" />
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java" />
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c3d69308-8723-4945-9b93-1fd3a72fce68/console.sql" />
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/models/Topics.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c3d69308-8723-4945-9b93-1fd3a72fce68/console.sql" />
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Menu.java" />
         <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/QuestionsDAO.java" />
+        <option value="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" />
       </list>
     </option>
   </component>
@@ -251,7 +258,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,13 +295,14 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609612489921" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609629019106" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Scanner-App" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -342,17 +349,19 @@
       <option name="presentableId" value="Default" />
       <updated>1609163459015</updated>
       <workItem from="1609163473500" duration="53646000" />
-      <workItem from="1609591882455" duration="10879000" />
+      <workItem from="1609591882455" duration="18562000" />
+      <workItem from="1609817179278" duration="18485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64525000" />
+    <option name="totallyTimeSpent" value="90693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25379938" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2575988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -361,17 +370,17 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.63384616" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.8169231" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.32923076" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3276923" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.32923076" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -474,40 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c3d69308-8723-4945-9b93-1fd3a72fce68/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/AdminCodesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="21" selection-start-line="26" selection-start-column="19" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="9" selection-start-line="21" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/models/Topicquiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -540,20 +515,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="31" column="9" selection-start-line="21" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/AdminCodesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="33" column="21" selection-start-line="26" selection-start-column="19" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c3d69308-8723-4945-9b93-1fd3a72fce68/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+        <state relative-caret-position="63">
+          <caret line="101" column="48" selection-start-line="101" selection-start-column="48" selection-end-line="101" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TopicsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="73" column="83" selection-start-line="73" selection-start-column="83" selection-end-line="73" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -562,10 +571,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/QuestionsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
+        <state relative-caret-position="505">
+          <caret line="161" column="60" selection-start-line="161" selection-start-column="60" selection-end-line="161" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#chooseRightAnswer#0;class#QuestionsDAO#0" />
+            <element signature="method#rightAnswer#0;class#QuestionsDAO#0" />
+            <element signature="method#searchQuestions#0;class#QuestionsDAO#0" />
           </folding>
         </state>
       </provider>

@@ -22,7 +22,7 @@ public class QuestionsDAO {
 
         menu.justDisplay();
         System.out.println("You can add new questions by first choosing the type of Question");
-        System.out.println("");
+        System.out.println();
         System.out.println("Enter (MCQ) for MCQ questions or (O) for other Question types");
 
         String questionTypes = scanner.next();
@@ -44,17 +44,26 @@ public class QuestionsDAO {
         List<Topics> topics = new ArrayList<Topics>();
 
         try {
-            String getAllTopicsQuery = "SELECT * FROM topics WHERE status = 1";
+//            String getAllTopicsQuery = "SELECT * FROM topics WHERE status = 1";
+            String getAllTopicsQuery = "SELECT * FROM topics ORDER BY idtopics ASC ";
             Statement statement = connection.createStatement();
             ResultSet results = statement.executeQuery(getAllTopicsQuery);
             while (results.next()) {
                 int topicId = results.getInt(1);
+                int status = results.getInt(3);
                 String questionTopic = results.getString(2);
                 Topics topic = new Topics();
                 topic.setIdTopics(topicId);
                 topic.setTopic(questionTopic);
                 topics.add(topic);
-                System.out.println("( " + topicId +" ) for - " + questionTopic);
+                String stat = "";
+                if(status == 1){
+                    stat = "Active";
+                }
+                else{
+                    stat = "Deactivated";
+                }
+                System.out.println("( " + topicId +" ) for - " + questionTopic + "  *NB* Status -> "+ stat);
             }
 
         } catch (SQLException e) {
@@ -77,6 +86,95 @@ public class QuestionsDAO {
             e.printStackTrace();
         }
         return topicID;
+    }
+
+    public void getAndUpdateTopic(Integer topicId){
+        int status = -1;
+        String topicValue = "", topicVal= "";
+        try {
+            String getTopicId = "SELECT * FROM topics WHERE idtopics = ?";
+            PreparedStatement checkTopicStatement = connection.prepareStatement(getTopicId);
+            checkTopicStatement.setInt(1, topicId);
+            ResultSet topic = checkTopicStatement.executeQuery();
+            while (topic.next()) {
+                status = topic.getInt(3);
+                topicValue = topic.getString(2);
+            }
+            String stat = "";
+            if(status == 1){
+                stat = "Active";
+            }
+            else{
+                stat = "Deactivated";
+            }
+            System.out.println("Topic : " + topicValue + "\nStatus : " + stat);
+
+            System.out.println("Enter : \n-1 To modify only the Topic");
+            if(status == 1){
+                System.out.println("-2 To Deactivate only the Topic");
+                status = 0;
+            }else{
+                System.out.println("-2 To Activate only the Topic");
+                status = 1;
+            }
+            System.out.println("");
+            System.out.println("Please Enter either 1 or 2 ONLY! ");
+            String updateTopicQuery = "", newTopic = "";
+
+            try {
+                int updateChoice = scanner.nextInt();
+                if(updateChoice==1){
+                    updateTopicQuery = "UPDATE topics SET topic =? WHERE idtopics = ? ";
+                    System.out.println("Enter the new Topic ");
+                    scanner.nextLine();
+                    newTopic = scanner.nextLine();
+                }else if(updateChoice==2){
+                    updateTopicQuery = "UPDATE topics SET status =? WHERE idtopics = ? ";
+                }
+
+//                Query to update starts
+
+                try {
+                    PreparedStatement updateTopicStatement = connection.prepareStatement(updateTopicQuery, Statement.RETURN_GENERATED_KEYS);
+                    updateTopicStatement.setInt(2, topicId);
+                    if(updateChoice==1){
+                        updateTopicStatement.setString(1, newTopic);
+                    }else if(updateChoice==2){
+                        updateTopicStatement.setInt(1, status);
+                    }
+                    int updateTopic = updateTopicStatement.executeUpdate();
+                    if (updateTopic > 0) {
+                        System.out.println("Topic updated successfully!");
+                        System.out.println("");
+                        System.out.println("");
+                        ResultSet updateResultSet = updateTopicStatement.getResultSet();
+                        while (topic.next()) {
+                            status = updateResultSet.getInt(3);
+                            topicVal = updateResultSet.getString(2);
+                        }
+                        String stats = "";
+                        if(status == 1){
+                            stats = "Active";
+                        }
+                        else{
+                            stats = "Deactivated";
+                        }
+                        System.out.println("Topic : " + topicVal + "\nStatus : " + stats);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+//                Query to update ends
+
+            } catch (InputMismatchException e) {
+                    menu.exitInvalidEntry();
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void addMCQQuestions(String questionType) {
@@ -110,8 +208,8 @@ public class QuestionsDAO {
 
                                 if(questionType.equals("mcq")){
 
-                                    System.out.println("");
-                                    System.out.println("");
+                                    System.out.println();
+                                    System.out.println();
 
                                     System.out.println("Enter the first possible answer");
                                     firstAnswer = scanner.nextLine();
@@ -137,7 +235,7 @@ public class QuestionsDAO {
                                             allSystemGo = true;
                                         } else {
                                             System.out.println("Two Wrong Choices,\n program will exit now!");
-                                            System.out.println("");
+                                            System.out.println();
                                             menu.exit();
                                         }
                                     }
@@ -219,9 +317,6 @@ public class QuestionsDAO {
                                         }
                                     }
 
-
-
-
                                 connection.close();
                                 break;
                             } catch (SQLException e) {
@@ -240,6 +335,10 @@ public class QuestionsDAO {
                         }
                     }
                     break;
+                }else{
+                    System.out.println("Topic does not Exists!");
+                    Menu menu = new Menu();
+                    menu.mainMenu();
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Please enter only numbers");
@@ -255,9 +354,9 @@ public class QuestionsDAO {
     }
 
     private String chooseRightAnswer(String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer){
-        System.out.println("");
+        System.out.println();
         System.out.println("Which is the correct answer? ");
-        System.out.println("");
+        System.out.println();
         System.out.println("Enter ");
         System.out.println("A for - " + firstAnswer);
         System.out.println("OR");
@@ -271,16 +370,71 @@ public class QuestionsDAO {
     }
 
     private boolean rightAnswer(String solution){
-        int countAnswer = 0;
-        boolean save = false;
+        return solution.equals("a") || solution.equals("b") || solution.equals("c") || solution.equals("d");
+    }
 
-        if(!solution.equals("a") && !solution.equals("b") && !solution.equals("c") && !solution.equals("d")){
-//            System.out.println("Wrong Choice. You will have one more chance to enter the right answer ");
-            countAnswer +=1;
-            return false;
-        }else{
-            return true;
+
+    public void viewAllQuestions(){
+        try {
+            String getAllQuestionsQuery = "SELECT  questions.*, topics.idtopics, topics.topic FROM questions, topics WHERE questions.idtopics = topics.idtopics AND topics.status = 1";
+            Statement statement = connection.createStatement();
+            ResultSet results = statement.executeQuery(getAllQuestionsQuery);
+            int number = 1;
+            while (results.next()) {
+                String question = results.getString(4);
+                String qType = results.getString(5);
+                int questionDifficulty = results.getInt(3);
+                String topic = results.getString(7);
+                System.out.println(number + "). Topic: " + topic + " | Q: " + question +" | Qtype: " + qType + "| Difficulty: " + questionDifficulty);
+                number += 1;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+    }
+
+    public void searchQuestions(){
+        System.out.println("Enter a Topic to search for it's associated Questions: ");
+        String topicQuestion = scanner.nextLine();
+        try {
+            String getAllSearchedQuestionsQuery = "SELECT  questions.*, topics.idtopics, topics.topic FROM questions, topics WHERE topics.topic LIKE ? AND (questions.idtopics = topics.idtopics AND topics.status = 1)";
+            PreparedStatement preparedStatementSearchQuestion = connection.prepareStatement(getAllSearchedQuestionsQuery);
+            preparedStatementSearchQuestion.setString(1, topicQuestion);
+            ResultSet resultsQuestions = preparedStatementSearchQuestion.executeQuery();
+            if (resultsQuestions.next()) {
+                int number = 1;
+                System.out.println("Please wait \nSearching... ");
+                System.out.println("");
+                System.out.println("");
+                do {
+                    String qType = resultsQuestions.getString(5);
+                    String question = resultsQuestions.getString(4);
+                    String topic = resultsQuestions.getString(7);
+                    int questionDifficulty = resultsQuestions.getInt(3);
+                    System.out.println(number + "). Topic: " + topic + " | Q: " + question + " | Qtype: " + qType + "| Difficulty: " + questionDifficulty);
+                    number += 1;
+                }
+                while (resultsQuestions.next());
+                System.out.println("");
+                System.out.println("");
+                number-=1;
+                System.out.println("Your Searched return "+ number +" result(s)");
+            }else{
+                System.out.println("Your Searched return 0 result");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Searched Topic has Questions associated with it");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void updateQuestion(){
 
     }
 
