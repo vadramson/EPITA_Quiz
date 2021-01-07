@@ -20,9 +20,11 @@ public class TakeQuiz {
     public void takeQuiz(){
         System.out.println("Please enter the Quiz code you wish to take.");
         String code = scanner.next();
+        Globals.quizCode = code;
         Integer potentialQuizId = quizDAO.getQuizID(code);
         if (potentialQuizId != 0){
             generateAndTakeQuiz(potentialQuizId);
+            Globals.quizCode = code;
         }else {
             System.out.println("Invalid Quiz Code");
             menu.mainMenu();
@@ -39,8 +41,7 @@ public class TakeQuiz {
         if (!fileDirectotyExists) {
             fileDirectory.mkdir();
         }
-
-        File file = new File("./Quizzes/"+quizIDGenerated+".txt");
+        File file = new File("./Quizzes/"+Globals.quizCode+"__"+Globals.studentName+".txt");
 
 //      Test if file exists if not create one
         boolean fileExists = file.exists();
@@ -50,6 +51,23 @@ public class TakeQuiz {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        try {
+            FileWriter fileWriter = new FileWriter(file, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            PrintWriter printWriter = new PrintWriter(bufferedWriter);
+            printWriter.println("*****************************************************************************************");
+            printWriter.println("Quiz "+ Globals.quizCode +" Generated to be Answered by " + Globals.studentName);
+            printWriter.println("========================================================================================");
+            printWriter.println("");
+            printWriter.println("");
+            printWriter.flush();
+            printWriter.close();
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
@@ -83,16 +101,15 @@ public class TakeQuiz {
                         System.out.println("");
 
                                 try {
-        //            Actual writing into Log file
                                     FileWriter fileWriter = new FileWriter(file, true);
                                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
                                     PrintWriter printWriter = new PrintWriter(bufferedWriter);
                                     printWriter.println(questionsCount +"). " + question);
                                     printWriter.println("");
                                     printWriter.flush();
-        //            printWriter.close();
-        //            bufferedWriter.close();
-        //            fileWriter.close();
+                                    printWriter.close();
+                                    bufferedWriter.close();
+                                    fileWriter.close();
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
@@ -127,9 +144,9 @@ public class TakeQuiz {
                                         printWriter.println("");
                                         printWriter.println("");
                                         printWriter.flush();
-                                        //            printWriter.close();
-                                        //            bufferedWriter.close();
-                                        //            fileWriter.close();
+                                        printWriter.close();
+                                        bufferedWriter.close();
+                                        fileWriter.close();
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -171,6 +188,24 @@ public class TakeQuiz {
                 }
             }
 //            Finish Qnawering quiz, save the results and display user's score for the quiz
+            int totalQuestions = questionsCount-1;
+            try {
+                FileWriter fileWriter = new FileWriter(file, true);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                PrintWriter printWriter = new PrintWriter(bufferedWriter);
+                printWriter.println("*****************************************************************************************");
+                printWriter.println("Quiz "+ Globals.quizCode +", Was Generated and Answered by " + Globals.studentName +", Scored: "+ marksCount + "/"+totalQuestions );
+                printWriter.println("========================================================================================");
+                printWriter.println("");
+                printWriter.println("");
+                printWriter.flush();
+                printWriter.close();
+                bufferedWriter.close();
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             System.out.println("\n\nYour score: " + marksCount);
             saveQuizResults(Globals.studentMatricule, quizIDGenerated, marksCount);
         } catch (SQLException e) {

@@ -1,8 +1,0 @@
-1). Some
-
-A). Java SE
-B). Java EE
-C). Java 2E
-D). None of the above
-
-

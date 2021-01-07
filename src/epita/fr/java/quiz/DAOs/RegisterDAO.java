@@ -41,6 +41,7 @@ public class RegisterDAO {
                 System.out.println("You are registered already");
                 connection.close();
                 Globals.studentMatricule = registerId;
+                Globals.studentName = studentMatricule;
                 takeQuiz.takeQuiz();
             }
             else {
@@ -59,6 +60,7 @@ public class RegisterDAO {
 
                 if (registerStudentResultSet.next()) {
                     registerId = registerStudentResultSet.getInt(1);
+                    Globals.studentName = studentMatricule;
 
                     System.out.println("");
                     System.out.println("You have been registered Successfully");
