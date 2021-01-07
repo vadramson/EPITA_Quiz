@@ -4,10 +4,7 @@ import epita.fr.java.quiz.connection.DatabaseConnection;
 import epita.fr.java.quiz.menu.Globals;
 import epita.fr.java.quiz.menu.Menu;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class RegisterDAO {
@@ -16,6 +13,7 @@ public class RegisterDAO {
     TakeQuiz takeQuiz = new TakeQuiz();
     Menu menu = new Menu();
     public void loginOrRegister() {
+        int registerId = 0;
         menu.justDisplay();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your student Number to begin.");
@@ -36,32 +34,38 @@ public class RegisterDAO {
             PreparedStatement preparedSelectStatement = connection.prepareStatement(getStudentMatricule);
             preparedSelectStatement.setString(1, studentMatricule);
             ResultSet checkMatricule = preparedSelectStatement.executeQuery();
-            if (checkMatricule.next()) {
+            while (checkMatricule.next()) {
+                registerId = checkMatricule.getInt(1);
+            }
+            if(registerId != 0) {
                 System.out.println("You are registered already");
                 connection.close();
-                Globals.studentMatricule = studentMatricule;
+                Globals.studentMatricule = registerId;
                 takeQuiz.takeQuiz();
             }
-            if (!checkMatricule.next()) {
+            else {
                 System.out.println("You are not yet registered.");
                 System.out.println("");
                 System.out.println("");
                 System.out.println("Please wait! ");
                 System.out.println("");
                 System.out.println("Registering you...");
-                Globals.studentMatricule = studentMatricule;
 
                 String addStudentMatricule = "INSERT INTO register (studentmatricule) VALUES (?) ";
-                PreparedStatement registerStudent = connection.prepareStatement(addStudentMatricule);
+                PreparedStatement registerStudent = connection.prepareStatement(addStudentMatricule, Statement.RETURN_GENERATED_KEYS);
                 registerStudent.setString(1, studentMatricule);
-                int saveStudent = registerStudent.executeUpdate();
-                connection.close();
-                if (saveStudent > 0) {
+                registerStudent.executeUpdate();
+                ResultSet registerStudentResultSet = registerStudent.getGeneratedKeys();
+
+                if (registerStudentResultSet.next()) {
+                    registerId = registerStudentResultSet.getInt(1);
+
                     System.out.println("");
                     System.out.println("You have been registered Successfully");
+                    Globals.studentMatricule = registerId;
                     takeQuiz.takeQuiz();
                 }
-
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
