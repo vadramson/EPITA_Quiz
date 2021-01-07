@@ -4,6 +4,7 @@ import epita.fr.java.quiz.connection.DatabaseConnection;
 import epita.fr.java.quiz.menu.Globals;
 import epita.fr.java.quiz.menu.Menu;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,6 +30,29 @@ public class TakeQuiz {
     }
 
     private void generateAndTakeQuiz(Integer quizIDGenerated){
+
+//        Create a new File object to later create log files directory
+        File fileDirectory = new File("./Quizzes");
+
+//      Test if file exists if not create one
+        boolean fileDirectotyExists = fileDirectory.exists();
+        if (!fileDirectotyExists) {
+            fileDirectory.mkdir();
+        }
+
+        File file = new File("./Quizzes/"+quizIDGenerated+".txt");
+
+//      Test if file exists if not create one
+        boolean fileExists = file.exists();
+        if (!fileExists) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
         System.out.println("");
         System.out.println("Quiz Started.\n\nFor MCQ Question, enter only the letter corresponding to the right answer when prompt to do so.\nFor Ordinary questions, enter your answer only when prompt to do so.\n\n Tic Toc\n\n BEGIN\n\n");
         int questionID = 0, topicId=0, difficulty=0, questionsCount = 1, marksCount = 0;
@@ -57,6 +81,22 @@ public class TakeQuiz {
                         System.out.println("");
                         System.out.println(questionsCount +"). " + question);
                         System.out.println("");
+
+                                try {
+        //            Actual writing into Log file
+                                    FileWriter fileWriter = new FileWriter(file, true);
+                                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                                    PrintWriter printWriter = new PrintWriter(bufferedWriter);
+                                    printWriter.println(questionsCount +"). " + question);
+                                    printWriter.println("");
+                                    printWriter.flush();
+        //            printWriter.close();
+        //            bufferedWriter.close();
+        //            fileWriter.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
                         if(questionType.equals("MCQ")){
                             try {
                                 PreparedStatement getMCQ_QuestionsAnswersStatement = connection.prepareStatement(getQuestionsMCQ_AnswersQuery);
@@ -74,6 +114,26 @@ public class TakeQuiz {
                                     System.out.println("C). " + c);
                                     System.out.println("D). " + d);
                                     System.out.println("");
+
+                                    try {
+                                        //            Actual writing into Log file
+                                        FileWriter fileWriter = new FileWriter(file, true);
+                                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                                        PrintWriter printWriter = new PrintWriter(bufferedWriter);
+                                        printWriter.println("A). " + a);
+                                        printWriter.println("B). " + b);
+                                        printWriter.println("C). " + c);
+                                        printWriter.println("D). " + d);
+                                        printWriter.println("");
+                                        printWriter.println("");
+                                        printWriter.flush();
+                                        //            printWriter.close();
+                                        //            bufferedWriter.close();
+                                        //            fileWriter.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+
                                     System.out.println("Enter the later corresponding to the right answer");
                                     userAnswer = scanner.next();
                                     if (userAnswer.equals(answer)){

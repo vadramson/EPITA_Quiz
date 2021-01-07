@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f98480c-74cd-4474-88fe-58d20d89fa35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/RegisterDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Globals.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,14 +96,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9737" />
+          <entry key="java" value="9777" />
           <entry key="sql" value="125" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9737" />
+          <entry key="JAVA" value="9777" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="125" />
         </counts>
@@ -141,8 +139,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="32" column="140" selection-start-line="32" selection-start-column="140" selection-end-line="32" selection-end-column="140" />
+            <state relative-caret-position="32">
+              <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -267,6 +265,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="675" />
     <option name="y" value="169" />
@@ -334,9 +338,9 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/My Stuff/Documents/EPITA/Fundamental Period DSA [FP]/OOP - JAVA UML/Final_Java_Project/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610020227263" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610021691398" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Scanner-App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../XML-Files" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -386,18 +390,17 @@
       <workItem from="1609872369429" duration="7126000" />
       <workItem from="1609945329901" duration="20669000" />
       <workItem from="1610007136667" duration="56000" />
-      <workItem from="1610008382502" duration="11763000" />
+      <workItem from="1610008382502" duration="13224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130318000" />
+    <option name="totallyTimeSpent" value="131779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27279636" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27279636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -406,7 +409,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7753846" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.7753846" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -423,10 +426,10 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.32978722" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32978722" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32978722" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27279636" />
@@ -670,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="32" column="140" selection-start-line="32" selection-start-column="140" selection-end-line="32" selection-end-column="140" />
+        <state relative-caret-position="32">
+          <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
