@@ -18,7 +18,7 @@ public class DatabaseConnection {
             Class.forName(connectionDriver);
             try {
                  con = DriverManager.getConnection(connectionURL, databaseUser, databasePassword);
-                 if(con != null) System.out.println("Connected!");
+//                 if(con != null) System.out.println("Connected!");
             } catch (SQLException ex) {
                 System.out.println("Failed to create the database connection.");
             }

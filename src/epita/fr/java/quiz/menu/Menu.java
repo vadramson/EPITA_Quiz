@@ -1,9 +1,6 @@
 package epita.fr.java.quiz.menu;
 
-import epita.fr.java.quiz.DAOs.AdminCodesDAO;
-import epita.fr.java.quiz.DAOs.QuestionsDAO;
-import epita.fr.java.quiz.DAOs.RegisterDAO;
-import epita.fr.java.quiz.DAOs.TopicsDAO;
+import epita.fr.java.quiz.DAOs.*;
 
 import java.util.Scanner;
 
@@ -111,7 +108,31 @@ public class Menu {
                 }
 
                 if (adminChoice.equals("qz")){
-                    exit();
+                    System.out.println("Enter CQ) to Create a new Quiz OR AT) to Add Topics to and existing Quiz OR VQ) to view all Quizzes");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("Please Enter CQ or AT or VQ ");
+                    String adminOptions = scanner.next();
+                    String adminOption = lowercase(adminOptions);
+                    QuizDAO quizDAO = new QuizDAO();
+                    QuizTopicDAO quizTopicDao = new QuizTopicDAO();
+
+                    if(adminOption.equals("m")){
+                        mainMenu();
+                    }
+                    if(adminOption.equals("e")){
+                        exit();
+                    }
+                    if(adminOption.equals("cq")){
+                        quizDAO.createQuiz();
+                    }
+                    if(adminOption.equals("at")){
+                        quizTopicDao.createQuizTopic();
+                    }
+                    if(adminOption.equals("vq")){
+                        quizDAO.viewQuizzes(0);
+                        mainMenu();
+                    }
                 }
                 exitInvalidEntry();
 

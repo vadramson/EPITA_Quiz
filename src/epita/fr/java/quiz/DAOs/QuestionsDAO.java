@@ -1,7 +1,6 @@
 package epita.fr.java.quiz.DAOs;
 
 import epita.fr.java.quiz.connection.DatabaseConnection;
-import epita.fr.java.quiz.menu.Globals;
 import epita.fr.java.quiz.menu.Menu;
 import epita.fr.java.quiz.models.Topics;
 
@@ -44,7 +43,6 @@ public class QuestionsDAO {
         List<Topics> topics = new ArrayList<Topics>();
 
         try {
-//            String getAllTopicsQuery = "SELECT * FROM topics WHERE status = 1";
             String getAllTopicsQuery = "SELECT * FROM topics ORDER BY idtopics ASC ";
             Statement statement = connection.createStatement();
             ResultSet results = statement.executeQuery(getAllTopicsQuery);
