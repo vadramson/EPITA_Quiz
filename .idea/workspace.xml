@@ -3,104 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f98480c-74cd-4474-88fe-58d20d89fa35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Class Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Create DB 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Create DB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Generating Entity Classes From DB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Import DB 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Import DB 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Import DB 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Import DB 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Physical Data Model.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Images/Usecase Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/class-use/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/AdminCodesDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/QuestionsDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/QuizDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/QuizTopicDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/RegisterDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/TakeQuiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/TopicsDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/AdminCodesDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/QuestionsDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/QuizDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/QuizTopicDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/RegisterDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/TakeQuiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/class-use/TopicsDAO.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/DAOs/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/DatabaseConnection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/class-use/DatabaseConnection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/connection/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/Globals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/Menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/class-use/Globals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/class-use/Menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/menu/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Admincodes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Answers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Mcqanswers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Questions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Quiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Results.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Topicquiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/Topics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Admincodes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Answers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Mcqanswers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Questions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Quiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Results.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Topicquiz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/class-use/Topics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/epita/fr/java/quiz/models/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tecnical_Docs/Java Doc/stylesheet.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,14 +69,16 @@
     <session id="1505222761">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.480" value="1" />
           <entry key="project.open.time.68" value="2" />
+          <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.82" value="2" />
           <entry key="project.open.time.86" value="1" />
+          <entry key="project.open.time.89" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -214,20 +118,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quizzes/Vadrama101__ngyibi.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="92" column="68" selection-start-line="92" selection-end-line="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/connection/DatabaseConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="90" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="90" />
+            <state relative-caret-position="340">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -356,7 +254,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/My Stuff/Documents/EPITA/Fundamental Period DSA [FP]/OOP - JAVA UML/Final_Java_Project/src/epita/fr/java/quiz/DAOs/TopicsDAO.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1610060354377" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1612168068722" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -410,16 +308,18 @@
       <workItem from="1610007136667" duration="56000" />
       <workItem from="1610008382502" duration="13464000" />
       <workItem from="1610033969651" duration="10477000" />
+      <workItem from="1610140440512" duration="602000" />
+      <workItem from="1612167254944" duration="882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142496000" />
+    <option name="totallyTimeSpent" value="143980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="784" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2773556" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28647417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -437,7 +337,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Inspection Results" order="9" weight="0.3276923" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32923076" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -546,35 +446,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="803" column="16" selection-start-line="803" selection-start-column="16" selection-end-line="803" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/io/PrintStream.java" />
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/models/Topicquiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding>
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,9 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,12 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4182">
           <caret line="256" column="40" selection-start-line="256" selection-start-column="40" selection-end-line="260" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#chooseRightAnswer#0;class#QuestionsDAO#0" />
-            <element signature="method#rightAnswer#0;class#QuestionsDAO#0" />
-            <element signature="method#searchQuestions#0;class#QuestionsDAO#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -640,9 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,9 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="86" column="13" selection-start-line="72" selection-start-column="12" selection-end-line="86" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,15 +521,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizzes/1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizzes/1.txt" />
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/menu/Globals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -683,25 +539,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quizzes/__bobby.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__swiibob.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__ndisang.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__bobby.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Quizzes/__bobby.txt" />
+    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__swiibob.txt" />
+    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__ndisang.txt" />
+    <entry file="file://$PROJECT_DIR$/Quizzes/Vad101__bobby.txt" />
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/DAOs/TakeQuiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,15 +555,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Quizzes/Vadrama101__ngyibi.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
+        <state relative-caret-position="591">
           <caret line="92" column="68" selection-start-line="92" selection-end-line="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/epita/fr/java/quiz/connection/DatabaseConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="90" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="90" />
+        <state relative-caret-position="340">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

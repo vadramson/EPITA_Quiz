@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Epita_Java_QuizPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>epita.fr.java.quiz.entities.Mcqanswers</class>
+    <class>epita.fr.java.quiz.entities.Results</class>
+    <class>epita.fr.java.quiz.entities.Questions</class>
+    <class>epita.fr.java.quiz.entities.Topicquiz</class>
+    <class>epita.fr.java.quiz.entities.Answers</class>
+    <class>epita.fr.java.quiz.entities.Topics</class>
+    <class>epita.fr.java.quiz.entities.Admincodes</class>
+    <class>epita.fr.java.quiz.entities.Quiz</class>
+    <class>epita.fr.java.quiz.entities.Register</class>
+    <class>epita.fr.java.quiz.models.Admincodes</class>
+    <class>epita.fr.java.quiz.models.Questions</class>
+    <class>epita.fr.java.quiz.models.Quiz</class>
+    <class>epita.fr.java.quiz.models.Answers</class>
+    <class>epita.fr.java.quiz.models.Results</class>
+    <class>epita.fr.java.quiz.models.Topics</class>
+    <class>epita.fr.java.quiz.models.Mcqanswers</class>
+    <class>epita.fr.java.quiz.models.Topicquiz</class>
+    <class>epita.fr.java.quiz.models.Register</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Epita_Java_Quiz"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Vadson"/>
+    </properties>
+  </persistence-unit>
+</persistence>
